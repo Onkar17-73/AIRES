@@ -1,0 +1,844 @@
+2025-05-04 17:33:18,827 - prediction - ERROR - Error loading models: Could not locate function 'mae'. Make sure custom classes are decorated with `@keras.saving.register_keras_serializable()`. Full object config: {'module': 'keras.metrics', 'class_name': 'function', 'config': 'mae', 'registered_name': 'mae'}
+2025-05-04 17:37:17,954 - prediction - ERROR - Error loading models: Could not locate function 'mae'. Make sure custom classes are decorated with `@keras.saving.register_keras_serializable()`. Full object config: {'module': 'keras.metrics', 'class_name': 'function', 'config': 'mae', 'registered_name': 'mae'}
+2025-05-04 17:45:24,419 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-05-04 17:45:24,434 - prediction - ERROR - Error loading models: <class 'keras.src.models.sequential.Sequential'> could not be deserialized properly. Please ensure that components that are Python object instances (layers, models, etc.) returned by `get_config()` are explicitly deserialized in the model's `from_config()` method.
+
+config={'module': 'keras', 'class_name': 'Sequential', 'config': {'name': 'sequential_1', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None, 'shared_object_id': 2282537583152}, 'layers': [{'module': 'keras.layers', 'class_name': 'InputLayer', 'config': {'batch_shape': [None, 1, 18], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer_1'}, 'registered_name': None}, {'module': 'tcn.tcn', 'class_name': 'TCN', 'config': {'name': 'tcn', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None}, 'nb_filters': 64, 'kernel_size': 5, 'nb_stacks': 1, 'dilations': [1, 2, 4, 8, 16, 32], 'padding': 'causal', 'use_skip_connections': True, 'dropout_rate': 0.0, 'return_sequences': False, 'activation': 'relu', 'use_batch_norm': False, 'use_layer_norm': False, 'kernel_initializer': 'he_normal', 'go_backwards': False, 'return_state': False}, 'registered_name': 'Custom>TCN', 'build_config': {'input_shape': [None, 1, 18]}}, {'module': 'keras.layers', 'class_name': 'Dense', 'config': {'name': 'dense_2', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None, 'shared_object_id': 2282537583152}, 'units': 64, 'activation': 'relu', 'use_bias': True, 'kernel_initializer': {'module': 'keras.initializers', 'class_name': 'GlorotUniform', 'config': {'seed': None}, 'registered_name': None}, 'bias_initializer': {'module': 'keras.initializers', 'class_name': 'Zeros', 'config': {}, 'registered_name': None}, 'kernel_regularizer': None, 'bias_regularizer': None, 'kernel_constraint': None, 'bias_constraint': None}, 'registered_name': None, 'build_config': {'input_shape': [None, 64]}}, {'module': 'keras.layers', 'class_name': 'Dense', 'config': {'name': 'dense_3', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None, 'shared_object_id': 2282537583152}, 'units': 5, 'activation': 'linear', 'use_bias': True, 'kernel_initializer': {'module': 'keras.initializers', 'class_name': 'GlorotUniform', 'config': {'seed': None}, 'registered_name': None}, 'bias_initializer': {'module': 'keras.initializers', 'class_name': 'Zeros', 'config': {}, 'registered_name': None}, 'kernel_regularizer': None, 'bias_regularizer': None, 'kernel_constraint': None, 'bias_constraint': None}, 'registered_name': None, 'build_config': {'input_shape': [None, 64]}}], 'build_input_shape': [None, 1, 18]}, 'registered_name': None, 'build_config': {'input_shape': [None, 1, 18]}, 'compile_config': {'optimizer': {'module': 'keras.optimizers', 'class_name': 'Adam', 'config': {'name': 'adam', 'learning_rate': 0.0010000000474974513, 'weight_decay': None, 'clipnorm': None, 'global_clipnorm': None, 'clipvalue': None, 'use_ema': False, 'ema_momentum': 0.99, 'ema_overwrite_frequency': None, 'loss_scale_factor': None, 'gradient_accumulation_steps': None, 'beta_1': 0.9, 'beta_2': 0.999, 'epsilon': 1e-07, 'amsgrad': False}, 'registered_name': None}, 'loss': 'mae', 'loss_weights': None, 'metrics': None, 'weighted_metrics': None, 'run_eagerly': False, 'steps_per_execution': 1, 'jit_compile': False}}.
+
+Exception encountered: Could not locate class 'TCN'. Make sure custom classes are decorated with `@keras.saving.register_keras_serializable()`. Full object config: {'module': 'tcn.tcn', 'class_name': 'TCN', 'config': {'name': 'tcn', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None}, 'nb_filters': 64, 'kernel_size': 5, 'nb_stacks': 1, 'dilations': [1, 2, 4, 8, 16, 32], 'padding': 'causal', 'use_skip_connections': True, 'dropout_rate': 0.0, 'return_sequences': False, 'activation': 'relu', 'use_batch_norm': False, 'use_layer_norm': False, 'kernel_initializer': 'he_normal', 'go_backwards': False, 'return_state': False}, 'registered_name': 'Custom>TCN', 'build_config': {'input_shape': [None, 1, 18]}}
+2025-05-04 17:46:14,430 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-05-04 17:46:14,436 - prediction - ERROR - Error loading models: <class 'keras.src.models.sequential.Sequential'> could not be deserialized properly. Please ensure that components that are Python object instances (layers, models, etc.) returned by `get_config()` are explicitly deserialized in the model's `from_config()` method.
+
+config={'module': 'keras', 'class_name': 'Sequential', 'config': {'name': 'sequential_1', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None, 'shared_object_id': 2282537583152}, 'layers': [{'module': 'keras.layers', 'class_name': 'InputLayer', 'config': {'batch_shape': [None, 1, 18], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer_1'}, 'registered_name': None}, {'module': 'tcn.tcn', 'class_name': 'TCN', 'config': {'name': 'tcn', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None}, 'nb_filters': 64, 'kernel_size': 5, 'nb_stacks': 1, 'dilations': [1, 2, 4, 8, 16, 32], 'padding': 'causal', 'use_skip_connections': True, 'dropout_rate': 0.0, 'return_sequences': False, 'activation': 'relu', 'use_batch_norm': False, 'use_layer_norm': False, 'kernel_initializer': 'he_normal', 'go_backwards': False, 'return_state': False}, 'registered_name': 'Custom>TCN', 'build_config': {'input_shape': [None, 1, 18]}}, {'module': 'keras.layers', 'class_name': 'Dense', 'config': {'name': 'dense_2', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None, 'shared_object_id': 2282537583152}, 'units': 64, 'activation': 'relu', 'use_bias': True, 'kernel_initializer': {'module': 'keras.initializers', 'class_name': 'GlorotUniform', 'config': {'seed': None}, 'registered_name': None}, 'bias_initializer': {'module': 'keras.initializers', 'class_name': 'Zeros', 'config': {}, 'registered_name': None}, 'kernel_regularizer': None, 'bias_regularizer': None, 'kernel_constraint': None, 'bias_constraint': None}, 'registered_name': None, 'build_config': {'input_shape': [None, 64]}}, {'module': 'keras.layers', 'class_name': 'Dense', 'config': {'name': 'dense_3', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None, 'shared_object_id': 2282537583152}, 'units': 5, 'activation': 'linear', 'use_bias': True, 'kernel_initializer': {'module': 'keras.initializers', 'class_name': 'GlorotUniform', 'config': {'seed': None}, 'registered_name': None}, 'bias_initializer': {'module': 'keras.initializers', 'class_name': 'Zeros', 'config': {}, 'registered_name': None}, 'kernel_regularizer': None, 'bias_regularizer': None, 'kernel_constraint': None, 'bias_constraint': None}, 'registered_name': None, 'build_config': {'input_shape': [None, 64]}}], 'build_input_shape': [None, 1, 18]}, 'registered_name': None, 'build_config': {'input_shape': [None, 1, 18]}, 'compile_config': {'optimizer': {'module': 'keras.optimizers', 'class_name': 'Adam', 'config': {'name': 'adam', 'learning_rate': 0.0010000000474974513, 'weight_decay': None, 'clipnorm': None, 'global_clipnorm': None, 'clipvalue': None, 'use_ema': False, 'ema_momentum': 0.99, 'ema_overwrite_frequency': None, 'loss_scale_factor': None, 'gradient_accumulation_steps': None, 'beta_1': 0.9, 'beta_2': 0.999, 'epsilon': 1e-07, 'amsgrad': False}, 'registered_name': None}, 'loss': 'mae', 'loss_weights': None, 'metrics': None, 'weighted_metrics': None, 'run_eagerly': False, 'steps_per_execution': 1, 'jit_compile': False}}.
+
+Exception encountered: Could not locate class 'TCN'. Make sure custom classes are decorated with `@keras.saving.register_keras_serializable()`. Full object config: {'module': 'tcn.tcn', 'class_name': 'TCN', 'config': {'name': 'tcn', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None}, 'nb_filters': 64, 'kernel_size': 5, 'nb_stacks': 1, 'dilations': [1, 2, 4, 8, 16, 32], 'padding': 'causal', 'use_skip_connections': True, 'dropout_rate': 0.0, 'return_sequences': False, 'activation': 'relu', 'use_batch_norm': False, 'use_layer_norm': False, 'kernel_initializer': 'he_normal', 'go_backwards': False, 'return_state': False}, 'registered_name': 'Custom>TCN', 'build_config': {'input_shape': [None, 1, 18]}}
+2025-05-04 17:47:06,783 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-05-04 17:47:06,789 - prediction - ERROR - Error loading models: <class 'keras.src.models.sequential.Sequential'> could not be deserialized properly. Please ensure that components that are Python object instances (layers, models, etc.) returned by `get_config()` are explicitly deserialized in the model's `from_config()` method.
+
+config={'module': 'keras', 'class_name': 'Sequential', 'config': {'name': 'sequential_1', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None, 'shared_object_id': 2282537583152}, 'layers': [{'module': 'keras.layers', 'class_name': 'InputLayer', 'config': {'batch_shape': [None, 1, 18], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer_1'}, 'registered_name': None}, {'module': 'tcn.tcn', 'class_name': 'TCN', 'config': {'name': 'tcn', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None}, 'nb_filters': 64, 'kernel_size': 5, 'nb_stacks': 1, 'dilations': [1, 2, 4, 8, 16, 32], 'padding': 'causal', 'use_skip_connections': True, 'dropout_rate': 0.0, 'return_sequences': False, 'activation': 'relu', 'use_batch_norm': False, 'use_layer_norm': False, 'kernel_initializer': 'he_normal', 'go_backwards': False, 'return_state': False}, 'registered_name': 'Custom>TCN', 'build_config': {'input_shape': [None, 1, 18]}}, {'module': 'keras.layers', 'class_name': 'Dense', 'config': {'name': 'dense_2', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None, 'shared_object_id': 2282537583152}, 'units': 64, 'activation': 'relu', 'use_bias': True, 'kernel_initializer': {'module': 'keras.initializers', 'class_name': 'GlorotUniform', 'config': {'seed': None}, 'registered_name': None}, 'bias_initializer': {'module': 'keras.initializers', 'class_name': 'Zeros', 'config': {}, 'registered_name': None}, 'kernel_regularizer': None, 'bias_regularizer': None, 'kernel_constraint': None, 'bias_constraint': None}, 'registered_name': None, 'build_config': {'input_shape': [None, 64]}}, {'module': 'keras.layers', 'class_name': 'Dense', 'config': {'name': 'dense_3', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None, 'shared_object_id': 2282537583152}, 'units': 5, 'activation': 'linear', 'use_bias': True, 'kernel_initializer': {'module': 'keras.initializers', 'class_name': 'GlorotUniform', 'config': {'seed': None}, 'registered_name': None}, 'bias_initializer': {'module': 'keras.initializers', 'class_name': 'Zeros', 'config': {}, 'registered_name': None}, 'kernel_regularizer': None, 'bias_regularizer': None, 'kernel_constraint': None, 'bias_constraint': None}, 'registered_name': None, 'build_config': {'input_shape': [None, 64]}}], 'build_input_shape': [None, 1, 18]}, 'registered_name': None, 'build_config': {'input_shape': [None, 1, 18]}, 'compile_config': {'optimizer': {'module': 'keras.optimizers', 'class_name': 'Adam', 'config': {'name': 'adam', 'learning_rate': 0.0010000000474974513, 'weight_decay': None, 'clipnorm': None, 'global_clipnorm': None, 'clipvalue': None, 'use_ema': False, 'ema_momentum': 0.99, 'ema_overwrite_frequency': None, 'loss_scale_factor': None, 'gradient_accumulation_steps': None, 'beta_1': 0.9, 'beta_2': 0.999, 'epsilon': 1e-07, 'amsgrad': False}, 'registered_name': None}, 'loss': 'mae', 'loss_weights': None, 'metrics': None, 'weighted_metrics': None, 'run_eagerly': False, 'steps_per_execution': 1, 'jit_compile': False}}.
+
+Exception encountered: Could not locate class 'TCN'. Make sure custom classes are decorated with `@keras.saving.register_keras_serializable()`. Full object config: {'module': 'tcn.tcn', 'class_name': 'TCN', 'config': {'name': 'tcn', 'trainable': True, 'dtype': {'module': 'keras', 'class_name': 'DTypePolicy', 'config': {'name': 'float32'}, 'registered_name': None}, 'nb_filters': 64, 'kernel_size': 5, 'nb_stacks': 1, 'dilations': [1, 2, 4, 8, 16, 32], 'padding': 'causal', 'use_skip_connections': True, 'dropout_rate': 0.0, 'return_sequences': False, 'activation': 'relu', 'use_batch_norm': False, 'use_layer_norm': False, 'kernel_initializer': 'he_normal', 'go_backwards': False, 'return_state': False}, 'registered_name': 'Custom>TCN', 'build_config': {'input_shape': [None, 1, 18]}}
+2025-05-04 17:54:05,138 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-05-04 17:54:06,025 - tensorflow - WARNING - From C:\Users\Omkar\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\backend\tensorflow\core.py:219: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2025-05-04 17:54:06,251 - prediction - INFO - All models loaded successfully
+2025-05-04 17:54:06,267 - werkzeug - INFO -  * Restarting with stat
+2025-05-04 17:54:10,653 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-05-04 17:54:11,389 - tensorflow - WARNING - From C:\Users\Omkar\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\backend\tensorflow\core.py:219: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2025-05-04 17:54:11,621 - prediction - INFO - All models loaded successfully
+2025-05-04 17:54:11,628 - werkzeug - WARNING -  * Debugger is active!
+2025-05-04 17:54:11,632 - werkzeug - INFO -  * Debugger PIN: 884-008-256
+2025-05-04 17:54:11,726 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-05-04 17:54:11,727 - werkzeug - INFO -  * Running on http://192.168.251.166:5000/ (Press CTRL+C to quit)
+2025-05-04 17:54:19,052 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 17:54:19] "GET / HTTP/1.1" 200 -
+2025-05-04 17:54:19,334 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 17:54:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-04 17:54:28,378 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 17:54:28] "GET / HTTP/1.1" 200 -
+2025-05-04 17:54:40,649 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6112
+2025-05-04 17:54:40,650 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 17:54:40] "POST /register HTTP/1.1" 200 -
+2025-05-04 17:54:42,692 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 17:54:42] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6112 HTTP/1.1" 200 -
+2025-05-04 17:54:45,733 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-05-04 17:54:46,784 - tensorflow - WARNING - From C:\Users\Omkar\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\backend\tensorflow\core.py:219: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2025-05-04 17:54:47,108 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 17:54:47,191 - prediction - INFO - All models loaded successfully
+2025-05-04 17:54:47,204 - werkzeug - INFO -  * Restarting with stat
+2025-05-04 17:54:47,549 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 17:54:47,569 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 17:54:47] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-05-04 17:54:47,666 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 17:54:47] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-04 17:54:47,666 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 17:54:47] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-04 17:54:47,698 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 17:54:47] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2025-05-04 17:54:47,708 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 17:54:47] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-04 17:54:47,740 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 17:54:47] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-04 17:54:52,210 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-05-04 17:54:53,090 - tensorflow - WARNING - From C:\Users\Omkar\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\backend\tensorflow\core.py:219: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2025-05-04 17:54:53,322 - prediction - INFO - All models loaded successfully
+2025-05-04 17:54:53,331 - werkzeug - WARNING -  * Debugger is active!
+2025-05-04 17:54:53,335 - werkzeug - INFO -  * Debugger PIN: 884-008-256
+2025-05-04 17:54:53,434 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-05-04 17:54:53,435 - werkzeug - INFO -  * Running on http://192.168.251.166:5000/ (Press CTRL+C to quit)
+2025-05-04 17:55:00,813 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6112
+2025-05-04 17:55:00,814 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 17:55:00] "POST /register HTTP/1.1" 200 -
+2025-05-04 17:55:02,882 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 17:55:02] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6112 HTTP/1.1" 200 -
+2025-05-04 17:55:21,007 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6112
+2025-05-04 17:55:21,008 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 17:55:21] "POST /register HTTP/1.1" 200 -
+2025-05-04 17:55:23,076 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 17:55:23] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6112 HTTP/1.1" 200 -
+2025-05-04 18:09:42,803 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-05-04 18:09:43,749 - tensorflow - WARNING - From C:\Users\Omkar\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\backend\tensorflow\core.py:219: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2025-05-04 18:09:43,974 - prediction - INFO - All models loaded successfully
+2025-05-04 18:09:44,046 - werkzeug - INFO -  * Restarting with stat
+2025-05-04 18:09:48,354 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-05-04 18:09:49,097 - tensorflow - WARNING - From C:\Users\Omkar\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\backend\tensorflow\core.py:219: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2025-05-04 18:09:49,327 - prediction - INFO - All models loaded successfully
+2025-05-04 18:09:49,335 - werkzeug - WARNING -  * Debugger is active!
+2025-05-04 18:09:49,339 - werkzeug - INFO -  * Debugger PIN: 884-008-256
+2025-05-04 18:09:49,432 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-05-04 18:09:49,433 - werkzeug - INFO -  * Running on http://192.168.251.166:5000/ (Press CTRL+C to quit)
+2025-05-04 18:09:53,056 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:09:53] "GET / HTTP/1.1" 200 -
+2025-05-04 18:10:00,950 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:10:00,952 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:00] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:10:02,991 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:02] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:10:06,674 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:10:06,675 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:06] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:10:08,365 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:08,759 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:08,903 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:08,974 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:08,975 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:10:08] "GET / HTTP/1.1" 200 -
+2025-05-04 18:10:08,975 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:08] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:10:21,112 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:10:21,113 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:21] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:10:23,175 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:23] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:10:25,706 - __main__ - INFO - Process submitted: PID 1
+2025-05-04 18:10:25,706 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:10:25] "POST /submit_process HTTP/1.1" 200 -
+2025-05-04 18:10:27,079 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:10:27,080 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:27] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:10:29,144 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:29] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:10:29,335 - __main__ - INFO - Allocated PID 1 to 1 nodes | CPU: 1.0/1.0 cores | RAM: 1.0/1.0 GB
+2025-05-04 18:10:29,969 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:30,066 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:30,223 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:30,313 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:30,314 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:10:30] "GET / HTTP/1.1" 200 -
+2025-05-04 18:10:36,049 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:36,126 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:36,238 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:36,313 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:36,314 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:10:36] "GET / HTTP/1.1" 200 -
+2025-05-04 18:10:40,491 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:40,579 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:40,728 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:40,830 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:40,833 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:10:40] "GET / HTTP/1.1" 200 -
+2025-05-04 18:10:41,324 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:10:41,324 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:41] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:10:43,387 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:43] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:10:46,177 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:46,251 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:46,377 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:46,454 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:46,455 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:10:46] "GET / HTTP/1.1" 200 -
+2025-05-04 18:10:47,277 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:10:47,278 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:47] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:10:49,357 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:49] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:10:52,403 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:52] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:10:52,967 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:53,065 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:53,218 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:53,301 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:10:53,302 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:10:53] "GET / HTTP/1.1" 200 -
+2025-05-04 18:10:55,459 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:55] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:10:58,510 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:10:58] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:11:01,473 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:11:01,473 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:01] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:11:01,522 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:01] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:11:03,496 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:03] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:11:04,572 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:04] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:11:07,492 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:11:07,494 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:07] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:11:07,650 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:07] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:11:09,557 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:09] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:11:10,690 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:10] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:11:13,764 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:13] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:11:16,354 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:11:16,431 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:11:16,556 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:11:16,638 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:11:16,640 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:11:16] "GET / HTTP/1.1" 200 -
+2025-05-04 18:11:16,828 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:16] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:11:19,903 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:19] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:11:21,595 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:11:21,596 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:21] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:11:22,952 - __main__ - INFO - Process 1 fully completed
+2025-05-04 18:11:22,953 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:22] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:11:23,639 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:23] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:11:26,043 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:11:26,117 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:11:26,234 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:11:26,320 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:11:26,321 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:11:26] "GET / HTTP/1.1" 200 -
+2025-05-04 18:11:27,661 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:11:27,662 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:27] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:11:29,711 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:29] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:11:41,718 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:11:41,719 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:41] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:11:43,753 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:43] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:11:47,824 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:11:47,825 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:47] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:11:48,840 - __main__ - INFO - Process submitted: PID 2
+2025-05-04 18:11:48,841 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:11:48] "POST /submit_process HTTP/1.1" 200 -
+2025-05-04 18:11:49,343 - __main__ - INFO - Allocated PID 2 to 2 nodes | CPU: 8.0/8.0 cores | RAM: 10.0/10.0 GB
+2025-05-04 18:11:49,867 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:49] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:11:52,915 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:52] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:11:55,191 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:11:55,274 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:11:55,441 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:11:55,528 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:11:55,530 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:11:55] "GET / HTTP/1.1" 200 -
+2025-05-04 18:11:55,972 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:55] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:11:59,005 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:11:59] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:01,849 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:12:01,850 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:01] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:12:02,033 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:02] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:03,907 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:03] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:12:05,078 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:05] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:06,983 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:06] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:08,015 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:12:08,016 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:08] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:12:08,153 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:08] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:10,018 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:10] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:10,047 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:10] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:12:11,194 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:11] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:13,044 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:13] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:14,261 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:14] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:16,114 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:16] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:17,328 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:17] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:19,149 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:19] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:20,397 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:20] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:22,007 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:12:22,007 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:22] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:12:22,207 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:22] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:23,474 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:23] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:24,080 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:24] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:12:25,251 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:25] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:25,720 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:12:25,793 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:12:25,897 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:12:25,968 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:12:25,969 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:12:25] "GET / HTTP/1.1" 200 -
+2025-05-04 18:12:28,155 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:12:28,156 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:28] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:12:28,281 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:28] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:30,219 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:30] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:12:31,312 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:31] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:32,235 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:12:32,311 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:12:32,434 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:12:32,509 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:12:32,510 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:12:32] "GET / HTTP/1.1" 200 -
+2025-05-04 18:12:34,370 - __main__ - INFO - Process 2 fully completed
+2025-05-04 18:12:34,372 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:34] "POST /update_progress HTTP/1.1" 200 -
+2025-05-04 18:12:36,900 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:12:37,015 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:12:37,184 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:12:37,277 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:12:37,279 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:12:37] "GET / HTTP/1.1" 200 -
+2025-05-04 18:12:42,217 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:12:42,218 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:42] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:12:44,257 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:44] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:12:48,316 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:12:48,317 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:48] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:12:50,408 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:12:50] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:13:02,396 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:13:02,396 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:02] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:13:04,452 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:04] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:13:07,551 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:07,636 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:07,752 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:07,822 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:07,823 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:13:07] "GET / HTTP/1.1" 200 -
+2025-05-04 18:13:08,545 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:13:08,546 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:08] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:13:10,593 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:10] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:13:12,997 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:13:12,998 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:12] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:13:13,231 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:13,307 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:13,476 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:13,605 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:13,814 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:13,908 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:13,909 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:13:13] "GET / HTTP/1.1" 200 -
+2025-05-04 18:13:15,057 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:15] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:13:22,588 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:13:22,589 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:22] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:13:24,651 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:24] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:13:28,736 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:13:28,737 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:28] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:13:30,822 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:30] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:13:33,200 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:13:33,200 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:33] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:13:35,256 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:35] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:13:42,776 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:13:42,776 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:42] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:13:44,072 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:44,163 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:44,306 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:44,397 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:44,542 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:44,621 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:13:44,623 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:13:44] "GET / HTTP/1.1" 200 -
+2025-05-04 18:13:44,817 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:44] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:13:48,978 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:13:48,979 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:48] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:13:51,033 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:51] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:13:53,367 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:13:53,368 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:53] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:13:55,387 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:13:55] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:14:02,921 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:14:02,922 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:02] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:14:04,972 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:04] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:14:09,162 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:14:09,164 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:09] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:14:11,238 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:11] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:14:13,542 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:14:13,544 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:13] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:14:15,543 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:14:15,617 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:14:15,719 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:14:15,787 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:14:15,894 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:14:15,984 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:14:15,985 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:14:15] "GET / HTTP/1.1" 200 -
+2025-05-04 18:14:15,985 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:15] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:14:23,100 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:14:23,100 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:23] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:14:25,143 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:25] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:14:29,418 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:14:29,418 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:29] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:14:31,475 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:31] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:14:34,121 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:14:34,122 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:34] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:14:36,209 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:36] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:14:43,243 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:14:43,244 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:43] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:14:45,294 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:45] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:14:46,596 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:14:46,702 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:14:46,838 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:14:46,912 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:14:47,036 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:14:47,113 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:14:47,115 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:14:47] "GET / HTTP/1.1" 200 -
+2025-05-04 18:14:49,601 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:14:49,602 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:49] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:14:51,656 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:51] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:14:54,302 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:14:54,303 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:54] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:14:56,365 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:14:56] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:15:03,443 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:15:03,443 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:03] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:15:05,497 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:05] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:15:09,756 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:15:09,757 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:09] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:15:11,793 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:11] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:15:14,516 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:15:14,516 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:14] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:15:16,602 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:16] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:15:17,583 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:15:17,717 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:15:17,844 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:15:17,920 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:15:18,050 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:15:18,127 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:15:18,128 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:15:18] "GET / HTTP/1.1" 200 -
+2025-05-04 18:15:23,611 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:15:23,612 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:23] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:15:25,684 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:25] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:15:29,901 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:15:29,902 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:29] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:15:31,948 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:31] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:15:34,698 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:15:34,699 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:34] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:15:36,743 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:36] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:15:43,787 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:15:43,787 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:43] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:15:45,846 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:45] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:15:48,556 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:15:48,630 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:15:48,749 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:15:48,819 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:15:48,942 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:15:49,011 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:15:49,012 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:15:49] "GET / HTTP/1.1" 200 -
+2025-05-04 18:15:50,044 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:15:50,045 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:50] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:15:52,122 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:52] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:15:54,853 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:15:54,853 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:54] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:15:56,925 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:15:56] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:16:03,969 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:16:03,970 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:03] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:16:06,021 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:06] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:16:10,245 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:16:10,245 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:10] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:16:12,321 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:12] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:16:15,051 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:16:15,053 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:15] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:16:17,126 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:17] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:16:19,553 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:16:19,620 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:16:19,736 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:16:19,807 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:16:19,919 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:16:19,991 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:16:19,992 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:16:19] "GET / HTTP/1.1" 200 -
+2025-05-04 18:16:24,126 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:16:24,127 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:24] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:16:26,187 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:26] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:16:30,459 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:16:30,460 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:30] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:16:32,521 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:32] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:16:35,294 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:16:35,295 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:35] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:16:37,342 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:37] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:16:44,301 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:16:44,302 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:44] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:16:46,363 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:46] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:16:50,534 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:16:50,605 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:16:50,726 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:16:50,797 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:16:50,904 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:16:50,975 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:16:50,976 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:16:50] "GET / HTTP/1.1" 200 -
+2025-05-04 18:16:50,976 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:16:50,977 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:50] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:16:53,037 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:53] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:16:55,478 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:16:55,479 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:55] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:16:57,541 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:16:57] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:17:04,501 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:17:04,502 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:04] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:17:06,569 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:06] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:17:11,200 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:17:11,202 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:11] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:17:13,275 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:13] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:17:15,673 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:17:15,673 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:15] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:17:17,730 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:17] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:17:21,562 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:17:21,648 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:17:21,799 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:17:21,876 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:17:22,003 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:17:22,078 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:17:22,079 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:17:22] "GET / HTTP/1.1" 200 -
+2025-05-04 18:17:24,690 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:17:24,691 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:24] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:17:26,730 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:26] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:17:31,383 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:17:31,383 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:31] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:17:33,437 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:33] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:17:35,903 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:17:35,905 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:35] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:17:37,962 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:37] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:17:44,852 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:17:44,853 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:44] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:17:46,913 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:46] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:17:51,538 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:17:51,539 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:51] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:17:52,541 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:17:52,617 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:17:52,730 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:17:52,803 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:17:52,911 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:17:52,982 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:17:52,983 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:17:52] "GET / HTTP/1.1" 200 -
+2025-05-04 18:17:53,589 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:53] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:17:56,072 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:17:56,073 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:56] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:17:58,118 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:17:58] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:18:05,027 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:18:05,028 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:05] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:18:07,086 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:07] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:18:11,696 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:18:11,698 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:11] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:18:13,776 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:13] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:18:16,228 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:18:16,229 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:16] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:18:18,271 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:18] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:18:23,551 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:18:23,619 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:18:23,727 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:18:23,799 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:18:23,922 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:18:24,006 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:18:24,007 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:18:24] "GET / HTTP/1.1" 200 -
+2025-05-04 18:18:25,221 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:18:25,222 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:25] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:18:27,283 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:27] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:18:31,889 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:18:31,890 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:31] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:18:33,948 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:33] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:18:36,399 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:18:36,400 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:36] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:18:38,475 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:38] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:18:45,395 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:18:45,397 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:45] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:18:47,470 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:47] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:18:52,103 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:18:52,104 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:52] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:18:54,162 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:54] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:18:54,570 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:18:54,642 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:18:54,755 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:18:54,852 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:18:54,989 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:18:55,058 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:18:55,059 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:18:55] "GET / HTTP/1.1" 200 -
+2025-05-04 18:18:56,592 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:18:56,593 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:56] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:18:58,649 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:18:58] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:19:05,593 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:19:05,593 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:05] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:19:07,655 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:07] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:19:12,281 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:19:12,281 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:12] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:19:14,350 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:14] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:19:16,819 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:19:16,820 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:16] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:19:18,854 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:18] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:19:25,565 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:19:25,643 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:19:25,766 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:19:25,841 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:19:25,968 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:19:26,043 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:19:26,044 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:19:26] "GET / HTTP/1.1" 200 -
+2025-05-04 18:19:26,044 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:19:26,045 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:26] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:19:28,113 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:28] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:19:32,495 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:19:32,497 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:32] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:19:34,539 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:34] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:19:36,991 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:19:36,992 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:36] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:19:39,050 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:39] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:19:46,247 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:19:46,248 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:46] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:19:48,309 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:48] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:19:52,635 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:19:52,636 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:52] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:19:54,673 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:54] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:19:56,199 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:19:56,272 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:19:56,376 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:19:56,446 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:19:56,568 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:19:56,633 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:19:56,634 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:19:56] "GET / HTTP/1.1" 200 -
+2025-05-04 18:19:57,165 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:19:57,165 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:57] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:19:59,225 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:19:59] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:20:06,416 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:20:06,417 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:06] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:20:08,470 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:08] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:20:12,789 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:20:12,790 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:12] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:20:14,832 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:14] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:20:17,343 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:20:17,343 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:17] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:20:19,376 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:19] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:20:26,576 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:20:26,577 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:26] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:20:26,816 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:20:26,892 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:20:26,996 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:20:27,063 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:20:27,166 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:20:27,248 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:20:27,250 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:20:27] "GET / HTTP/1.1" 200 -
+2025-05-04 18:20:28,623 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:28] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:20:32,935 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:20:32,936 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:32] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:20:34,973 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:34] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:20:37,479 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:20:37,479 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:37] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:20:39,546 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:39] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-04 18:20:46,741 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-1072
+2025-05-04 18:20:46,742 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:46] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:20:48,826 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:48] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-1072 HTTP/1.1" 200 -
+2025-05-04 18:20:53,106 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-6276
+2025-05-04 18:20:53,108 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:53] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:20:55,177 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:55] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-6276 HTTP/1.1" 200 -
+2025-05-04 18:20:57,546 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:20:57,623 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:20:57,744 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:20:57,813 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:20:57,927 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:20:58,002 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-04 18:20:58,005 - werkzeug - INFO - 192.168.251.166 - - [04/May/2025 18:20:58] "GET / HTTP/1.1" 200 -
+2025-05-04 18:20:58,005 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-17568
+2025-05-04 18:20:58,006 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:20:58] "POST /register HTTP/1.1" 200 -
+2025-05-04 18:21:00,044 - werkzeug - INFO - 127.0.0.1 - - [04/May/2025 18:21:00] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-17568 HTTP/1.1" 200 -
+2025-05-05 01:41:50,466 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-05-05 01:41:55,183 - tensorflow - WARNING - From C:\Users\Omkar\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\backend\tensorflow\core.py:219: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2025-05-05 01:41:56,762 - prediction - INFO - All models loaded successfully
+2025-05-05 01:41:56,842 - werkzeug - INFO -  * Restarting with stat
+2025-05-05 01:42:23,263 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-05-05 01:42:28,000 - tensorflow - WARNING - From C:\Users\Omkar\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\backend\tensorflow\core.py:219: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2025-05-05 01:42:29,272 - prediction - INFO - All models loaded successfully
+2025-05-05 01:42:29,312 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 01:42:29,327 - werkzeug - INFO -  * Debugger PIN: 884-008-256
+2025-05-05 01:42:29,781 - werkzeug - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-05-05 01:42:29,786 - werkzeug - INFO -  * Running on http://192.168.251.166:5000/ (Press CTRL+C to quit)
+2025-05-05 01:42:37,430 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:42:37] "GET / HTTP/1.1" 200 -
+2025-05-05 01:42:38,029 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:42:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-05 01:42:48,763 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:42:48,765 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:42:48] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:42:50,814 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:42:50] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:42:52,846 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:42:54,994 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:42:55,002 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:42:55] "GET / HTTP/1.1" 200 -
+2025-05-05 01:42:55,002 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:42:55,006 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:42:55] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:42:57,090 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:42:57] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:43:03,475 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:43:03,830 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:43:04,352 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:43:04,669 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:43:04,673 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:43:04] "GET / HTTP/1.1" 200 -
+2025-05-05 01:43:09,045 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:43:09,046 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:09] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:43:11,091 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:11] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:43:15,401 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:43:15,403 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:15] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:43:17,462 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:17] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:43:26,086 - __main__ - INFO - Process submitted: PID 1
+2025-05-05 01:43:26,088 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:43:26] "POST /submit_process HTTP/1.1" 200 -
+2025-05-05 01:43:29,326 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:43:29,659 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:43:30,196 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:43:30,545 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:43:30,554 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:43:30] "GET / HTTP/1.1" 200 -
+2025-05-05 01:43:30,555 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:43:30,558 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:30] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:43:30,559 - __main__ - INFO - Allocated PID 1 to 2 nodes | CPU: 10.0/10.0 cores | RAM: 4.0/4.0 GB
+2025-05-05 01:43:33,431 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:43:34,030 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:43:34,533 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:43:34,858 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:43:34,865 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:43:34] "GET / HTTP/1.1" 200 -
+2025-05-05 01:43:34,866 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:34] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:43:35,876 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:43:35,878 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:35] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:43:37,954 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:37] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:43:37,960 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:37] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:41,015 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:41] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:41,021 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:41] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:44,059 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:44] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:44,062 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:44] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:47,120 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:47] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:47,128 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:47] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:50,177 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:50] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:50,183 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:50] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:53,107 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:43:53,109 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:53] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:43:53,202 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:53] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:53,222 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:53] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:55,184 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:55] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:43:56,216 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:43:56,220 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:56] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:43:56,251 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:56] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:56,287 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:56] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:58,302 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:58] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:43:59,338 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:59] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:43:59,344 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:43:59] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:44:02,430 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:02] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:44:02,435 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:02] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:44:05,862 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:44:06,206 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:44:06,722 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:44:07,058 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:44:07,062 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:44:07] "GET / HTTP/1.1" 200 -
+2025-05-05 01:44:07,063 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:07] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:44:10,117 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:10] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:44:13,176 - __main__ - INFO - Process 1 fully completed
+2025-05-05 01:44:13,177 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:13] "POST /update_progress HTTP/1.1" 200 -
+2025-05-05 01:44:13,440 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:44:13,441 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:13] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:44:15,500 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:15] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:44:16,597 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:44:16,599 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:16] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:44:18,644 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:18] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:44:33,804 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:44:33,806 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:33] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:44:35,857 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:35] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:44:36,977 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:44:36,979 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:36] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:44:38,005 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:44:38,613 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:44:39,570 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:44:39,992 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:44:39,997 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:44:39] "GET / HTTP/1.1" 200 -
+2025-05-05 01:44:39,999 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:39] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:44:54,120 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:44:54,122 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:54] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:44:56,164 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:56] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:44:58,323 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:44:58,326 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:44:58] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:45:00,380 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:45:00] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:45:10,859 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:45:11,215 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:45:11,704 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:45:12,067 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:45:12,072 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:45:12] "GET / HTTP/1.1" 200 -
+2025-05-05 01:45:14,444 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:45:14,446 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:45:14] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:45:16,508 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:45:16] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:45:18,699 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:45:18,700 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:45:18] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:45:20,748 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:45:20] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:45:34,779 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:45:34,781 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:45:34] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:45:36,845 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:45:36] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:45:39,044 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:45:39,046 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:45:39] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:45:41,094 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:45:41] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:45:42,991 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:45:43,596 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:45:44,394 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:45:44,862 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:45:44,866 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:45:44] "GET / HTTP/1.1" 200 -
+2025-05-05 01:45:55,464 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:45:55,801 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:45:56,300 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:45:56,685 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:45:56,690 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:45:56] "GET / HTTP/1.1" 200 -
+2025-05-05 01:45:56,691 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:45:56,695 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:45:56] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:45:58,745 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:45:58] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:45:59,334 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:45:59,336 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:45:59] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:46:01,386 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:46:01] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:46:17,005 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:46:17,011 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:46:17] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:46:19,044 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:46:19] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:46:19,732 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:46:19,734 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:46:19] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:46:21,822 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:46:21] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:46:28,082 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:46:28,584 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:46:29,389 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:46:30,166 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:46:30,179 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:46:30] "GET / HTTP/1.1" 200 -
+2025-05-05 01:46:37,423 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:46:37,425 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:46:37] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:46:39,497 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:46:39] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:46:40,148 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:46:40,150 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:46:40] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:46:42,214 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:46:42] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:46:57,833 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:46:57,835 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:46:57] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:46:59,889 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:46:59] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:47:00,498 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:47:00,501 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:00] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:47:02,046 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:03,056 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:03,787 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:04,214 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:04,222 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:47:04] "GET / HTTP/1.1" 200 -
+2025-05-05 01:47:04,225 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:04] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:47:18,160 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:47:18,163 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:18] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:47:20,201 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:20] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:47:22,595 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:47:22,598 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:22] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:47:24,652 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:24] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:47:35,811 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:36,220 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:37,024 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:37,495 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:37,506 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:47:37] "GET / HTTP/1.1" 200 -
+2025-05-05 01:47:38,741 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:47:38,743 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:38] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:47:40,796 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:40] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:47:43,035 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:47:43,038 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:43] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:47:45,100 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:45] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:47:55,935 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-22068
+2025-05-05 01:47:55,937 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:55] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:47:56,975 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:57,399 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:58,036 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:58,449 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:59,073 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:59,403 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:47:59,412 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:47:59] "GET / HTTP/1.1" 200 -
+2025-05-05 01:47:59,412 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:59] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-22068 HTTP/1.1" 200 -
+2025-05-05 01:47:59,413 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:47:59,418 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:47:59] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:48:01,463 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:01] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:48:03,400 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:48:03,403 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:03] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:48:05,464 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:05] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:48:17,656 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-22068
+2025-05-05 01:48:17,658 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:17] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:48:19,714 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:19] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-22068 HTTP/1.1" 200 -
+2025-05-05 01:48:19,762 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:48:19,763 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:19] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:48:21,823 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:21] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:48:23,731 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:48:23,734 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:23] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:48:25,792 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:25] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:48:30,019 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:48:30,325 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:48:30,971 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:48:31,312 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:48:31,852 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:48:32,227 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:48:32,240 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:48:32] "GET / HTTP/1.1" 200 -
+2025-05-05 01:48:37,954 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-22068
+2025-05-05 01:48:37,957 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:37] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:48:40,025 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:40] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-22068 HTTP/1.1" 200 -
+2025-05-05 01:48:40,155 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:48:40,157 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:40] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:48:42,180 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:42] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:48:44,086 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:48:44,087 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:44] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:48:46,149 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:46] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:48:58,320 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-22068
+2025-05-05 01:48:58,322 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:48:58] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:49:00,370 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:00] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-22068 HTTP/1.1" 200 -
+2025-05-05 01:49:00,453 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:49:00,455 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:00] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:49:02,514 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:02] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:49:03,931 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:49:04,330 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:49:04,850 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:49:05,205 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:49:05,778 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:49:06,168 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:49:06,180 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:49:06] "GET / HTTP/1.1" 200 -
+2025-05-05 01:49:06,181 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:49:06,192 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:06] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:49:08,264 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:08] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:49:18,607 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-22068
+2025-05-05 01:49:18,609 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:18] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:49:20,658 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:20] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-22068 HTTP/1.1" 200 -
+2025-05-05 01:49:20,783 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:49:20,785 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:20] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:49:22,863 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:22] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:49:26,564 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:49:26,566 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:26] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:49:28,625 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:28] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:49:37,869 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:49:38,203 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:49:38,658 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:49:39,136 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:49:39,723 - prediction - ERROR - Prediction failed with LSTM: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:49:40,060 - prediction - ERROR - Prediction failed with TCN: 'Sequential' object has no attribute 'predict_proba'
+2025-05-05 01:49:40,065 - werkzeug - INFO - 192.168.251.166 - - [05/May/2025 01:49:40] "GET / HTTP/1.1" 200 -
+2025-05-05 01:49:40,066 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-22068
+2025-05-05 01:49:40,070 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:40] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:49:41,386 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:49:41,388 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:41] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:49:42,124 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:42] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-22068 HTTP/1.1" 200 -
+2025-05-05 01:49:43,448 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:43] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-9052 HTTP/1.1" 200 -
+2025-05-05 01:49:46,883 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-18016
+2025-05-05 01:49:46,884 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:46] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:49:48,944 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:49:48] "GET /get_allocations?node_id=DESKTOP-7BGPPRI-18016 HTTP/1.1" 200 -
+2025-05-05 01:50:00,482 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-22068
+2025-05-05 01:50:00,484 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:50:00] "POST /register HTTP/1.1" 200 -
+2025-05-05 01:50:01,806 - __main__ - INFO - Node registered: DESKTOP-7BGPPRI-9052
+2025-05-05 01:50:01,808 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 01:50:01] "POST /register HTTP/1.1" 200 -

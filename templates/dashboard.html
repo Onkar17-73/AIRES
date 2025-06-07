@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resource Allocation Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .node {
+            display: flex;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        .resource-bar {
+            height: 20px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            margin: 5px 0;
+            overflow: hidden;
+        }
+        .resource-fill {
+            height: 100%;
+            background: #3498db;
+        }
+        .process {
+            padding: 10px;
+            margin: 5px 0;
+            background: #e8f4fc;
+            border-left: 4px solid #3498db;
+        }
+        .status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        .status-pending { background: #f39c12; }
+        .status-fully_allocated { background: #2ecc71; }
+        .status-partially_allocated { background: #e67e22; }
+        .status-completed { background: #95a5a6; }
+        .warning-process {
+            border-left: 4px solid #f39c12;
+            background: #fef5e7;
+        }
+        .cluster-process {
+            border-left: 4px solid #9b59b6;
+            background: #f5eef8;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .prediction {
+            margin-top: 10px;
+            padding: 10px;
+            background: #eaf7ea;
+            border-radius: 5px;
+        }
+        .prediction-bar {
+            height: 15px;
+            background: #dfe6e9;
+            border-radius: 5px;
+            margin: 3px 0;
+        }
+        .prediction-fill {
+            height: 100%;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        #formMessage {
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .model-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .model-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px;
+        }
+        .model-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .confidence-indicator {
+            height: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        .confidence-fill {
+            height: 100%;
+            background: #2ecc71;
+        }
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+        .metric-value {
+            font-weight: bold;
+        }
+        .model-chart {
+            height: 150px;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Resource Allocation Dashboard</h1>
+        
+        <div class="card">
+            <h2>Submit New Process</h2>
+            <form id="processForm" action="/submit_process" method="POST">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <label for="cpu">CPU Cores Required:</label>
+                        <input type="number" id="cpu" name="cpu" step="0.1" min="0.1" required>
+                        
+                        <label for="ram">RAM Required (GB):</label>
+                        <input type="number" id="ram" name="ram" step="0.1" min="0.1" required>
+                    </div>
+                    <div>
+                        <label for="disk">Disk Space Required (GB):</label>
+                        <input type="number" id="disk" name="disk" min="0" required>
+                        
+                        <label for="gpu">GPU Utilization (%):</label>
+                        <input type="number" id="gpu" name="gpu" min="0" max="100" required>
+                    </div>
+                </div>
+                <button type="submit" style="margin-top: 15px;">Submit Process</button>
+            </form>
+            <div id="formMessage" style="margin-top: 10px;"></div>
+        </div>
+        
+        <div class="card">
+            <h2>Connected Nodes ({{ nodes|length }})</h2>
+            {% for node_id, node in nodes.items() %}
+            <div class="node">
+                <div style="flex: 1;">
+                    <h3>{{ node_id }}</h3>
+                    <p>IP: {{ node.get('ip', 'Unknown') }} | 
+                       Last Seen: {{ node['last_seen']|datetime }}</p>
+                    
+                    <div>
+                        <strong>Resources:</strong>
+                        <div>CPU: {{ node['resources']['cpu_cores']|round(1) }} cores
+                            <div class="resource-bar">
+                                <div class="resource-fill" style="width: {{ (node['resources']['cpu_cores'] / node['original_resources']['cpu_cores'] * 100)|round(1) }}%"></div>
+                            </div>
+                        </div>
+                        <div>RAM: {{ node['resources']['ram_gb']|round(1) }} GB
+                            <div class="resource-bar">
+                                <div class="resource-fill" style="width: {{ (node['resources']['ram_gb'] / node['original_resources']['ram_gb'] * 100)|round(1) }}%"></div>
+                            </div>
+                        </div>
+                        <div>Disk: {{ node['resources']['disk_gb']|round(1) }} GB available</div>
+                        <div>GPU: {{ node['resources']['gpu_percent']|round(1) }}% available</div>
+                    </div>
+
+                    <div class="prediction">
+                        <strong>Performance Predictions:</strong>
+                        <div>Throughput: {{ predictions[node_id]['throughput']|round(1) }}%
+                            <div class="prediction-bar">
+                                <div class="prediction-fill" style="width: {{ predictions[node_id]['throughput'] }}%; background: #2ecc71;"></div>
+                            </div>
+                        </div>
+                        <div>Latency: {{ predictions[node_id]['latency']|round(1) }}ms
+                            <div class="prediction-bar">
+                                <div class="prediction-fill" style="width: {{ 100 - [predictions[node_id]['latency']*5, 100]|min }}%; background: #e74c3c;"></div>
+                            </div>
+                        </div>
+                        <div>Stability: {{ predictions[node_id]['stability']|round(1) }}%
+                            <div class="prediction-bar">
+                                <div class="prediction-fill" style="width: {{ predictions[node_id]['stability'] }}%; background: #3498db;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <h4>Running Processes</h4>
+                    {% for process in allocated.get(node_id, []) %}
+                    <div class="process {% if process.assigned_to|length > 1 %}cluster-process{% endif %} {% if process.status == 'partially_allocated' %}warning-process{% endif %}">
+                        PID {{ process.pid }}: 
+                        <span class="status status-{{ process.status }}">{{ process.status|upper }}</span><br>
+                        Requested: {{ process.original_requirements['cpu']|round(1) }} cores, 
+                        {{ process.original_requirements['ram']|round(1) }} GB RAM<br>
+                        Allocated: {{ process.allocated_resources['cpu']|round(1) }} cores, 
+                        {{ process.allocated_resources['ram']|round(1) }} GB RAM<br>
+                        Progress: {{ process.progress }}%<br>
+                        {% if process.assigned_to|length > 1 %}
+                        <small>Running on {{ process.assigned_to|length }} nodes</small>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- <div class="card">
+            <h2>Model Performance Comparison</h2>
+            <div class="model-comparison">
+                {% for model_name, metrics in model_metrics.items() %}
+                <div class="model-card">
+                    <div class="model-header">
+                        <span>{{ model_name }}</span>
+                        <span>{{ metrics[0].confidence|round(1) }}%</span>
+                    </div>
+                    <div class="confidence-indicator">
+                        <div class="confidence-fill" style="width: {{ metrics[0].confidence }}%"></div>
+                    </div>
+                    
+                    <div class="metric-row">
+                        <span>Avg CPU Cores:</span>
+                        <span class="metric-value">{{ (metrics|sum(attribute='cpu') / metrics|length)|round(1) }}</span>
+                    </div>
+                    <div class="metric-row">
+                        <span>Avg RAM GB:</span>
+                        <span class="metric-value">{{ (metrics|sum(attribute='ram') / metrics|length)|round(1) }}</span>
+                    </div>
+                    
+                    <canvas class="model-chart" id="chart-{{ model_name }}"></canvas>
+                </div>
+                {% endfor %}
+            </div>
+        </div> -->
+
+        <div class="card">
+            <h2>Process Queue</h2>
+            <div style="display: flex; gap: 20px;">
+                <div style="flex: 1;">
+                    <h3>Pending ({{ pending|length }})</h3>
+                    {% for process in pending %}
+                    <div class="process">
+                        PID {{ process.pid }}: 
+                        <span class="status status-pending">PENDING</span><br>
+                        Requires: {{ process.original_requirements['cpu']|round(1) }} cores, 
+                        {{ process.original_requirements['ram']|round(1) }} GB RAM<br>
+                        Minimum: {{ process.min_allocation['cpu']|round(1) }} cores, 
+                        {{ process.min_allocation['ram']|round(1) }} GB RAM
+                    </div>
+                    {% endfor %}
+                </div>
+                <div style="flex: 1;">
+                    <h3>Completed ({{ completed|length }})</h3>
+                    {% for process in completed %}
+                    <div class="process">
+                        PID {{ process.pid }}: 
+                        <span class="status status-completed">COMPLETED</span><br>
+                        Ran on: {{ process.assigned_to|length }} nodes<br>
+                        Duration: {{ (process.created_at|duration)|round(1) }}s
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => location.reload(), 30000);
+        
+        document.getElementById('processForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const messageEl = document.getElementById('formMessage');
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        cpu: parseFloat(formData.get('cpu')),
+                        ram: parseFloat(formData.get('ram')),
+                        disk: parseFloat(formData.get('disk')),
+                        gpu: parseFloat(formData.get('gpu'))
+                    })
+                });
+                
+                const result = await response.json();
+                messageEl.textContent = `Process submitted with PID ${result.pid}`;
+                messageEl.style.color = 'green';
+                form.reset();
+            } catch (error) {
+                messageEl.textContent = 'Error submitting process';
+                messageEl.style.color = 'red';
+            }
+            
+            setTimeout(() => {
+                messageEl.textContent = '';
+            }, 5000);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            {% for model_name, metrics in model_metrics.items() %}
+            const ctx{{ loop.index }} = document.getElementById('chart-{{ model_name }}');
+            new Chart(ctx{{ loop.index }}, {
+                type: 'bar',
+                data: {
+                    labels: {{ metrics|map(attribute='node')|list|tojson }},
+                    datasets: [{
+                        label: 'CPU Cores',
+                        data: {{ metrics|map(attribute='cpu')|list|tojson }},
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: 'RAM GB',
+                        data: {{ metrics|map(attribute='ram')|list|tojson }},
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+            {% endfor %}
+        });
+    </script>
+</body>
+</html>

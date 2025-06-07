@@ -1,0 +1,24 @@
+2025-05-04 17:33:04,307 - __main__ - INFO - Starting client node DESKTOP-7BGPPRI-20636
+2025-05-04 17:54:37,499 - __main__ - INFO - Starting client node DESKTOP-7BGPPRI-6112
+2025-05-04 18:09:57,741 - __main__ - INFO - Starting client node DESKTOP-7BGPPRI-1072
+2025-05-04 18:10:03,465 - __main__ - INFO - Starting client node DESKTOP-7BGPPRI-6276
+2025-05-04 18:10:49,359 - __main__ - INFO - Starting PID 1 with 100.0% resources
+2025-05-04 18:11:22,956 - __main__ - INFO - Process 1 completed on this node
+2025-05-04 18:11:22,957 - __main__ - INFO - Process 1 fully completed
+2025-05-04 18:11:49,871 - __main__ - INFO - Starting PID 2 with 100.0% resources
+2025-05-04 18:12:03,910 - __main__ - INFO - Starting PID 2 with 100.0% resources
+2025-05-04 18:12:23,478 - __main__ - INFO - Process 2 completed on this node
+2025-05-04 18:12:23,478 - __main__ - INFO - Process 2 fully completed
+2025-05-04 18:12:34,374 - __main__ - INFO - Process 2 completed on this node
+2025-05-04 18:12:34,374 - __main__ - INFO - Process 2 fully completed
+2025-05-04 18:13:09,807 - __main__ - INFO - Starting client node DESKTOP-7BGPPRI-17568
+2025-05-05 01:42:45,265 - __main__ - INFO - Starting client node DESKTOP-7BGPPRI-9052
+2025-05-05 01:42:49,453 - __main__ - INFO - Starting client node DESKTOP-7BGPPRI-18016
+2025-05-05 01:43:34,873 - __main__ - INFO - Starting PID 1 with 100.0% resources
+2025-05-05 01:43:37,960 - __main__ - INFO - Starting PID 1 with 100.0% resources
+2025-05-05 01:44:02,434 - __main__ - INFO - Process 1 completed on this node
+2025-05-05 01:44:02,435 - __main__ - INFO - Process 1 fully completed
+2025-05-05 01:44:13,180 - __main__ - INFO - Process 1 completed on this node
+2025-05-05 01:44:13,181 - __main__ - INFO - Process 1 fully completed
+2025-05-05 01:47:52,224 - __main__ - INFO - Starting client node DESKTOP-7BGPPRI-22068
+2025-05-05 01:50:04,952 - __main__ - WARNING - Connection error: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
